@@ -53,7 +53,7 @@ run(['config-pin',  'P9.18', 'spi']) # can't have MOSI high during power up, so 
 spi = SPI(0, 0)
 
 print(spi.xfer2([(0b00000000 | 0x11), 0b00110100])) # write register 0x11 high power mode, internal reference on 
-print(spi.xfer2([(0b00000000 | 0x15), 0b01000000])) # write register 0x11 high power mode, internal reference on 
+print(spi.xfer2([(0b00000000 | 0x15), 0b01000000])) # write register 0x15, internal reference
 
 # To compile firmware, use the command: pasm -b -V3 HWL_ping.pasm
 pruss = Icss( "/dev/uio/pruss/module" )
